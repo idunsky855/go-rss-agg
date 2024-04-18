@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"sync"
 	"time"
@@ -46,7 +47,7 @@ func scrapeFeed(db *database.Queries, wg *sync.WaitGroup, feed database.Feed) {
 		log.Println("Error fetching feed: ", err)
 		return
 	}
-
+	fmt.Println("GGGGGGG")
 	for _, item := range rssFeed.Channel.Item {
 		log.Println("Found post", item.Title, "on feed", feed.Name)
 	}
